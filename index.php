@@ -1,12 +1,6 @@
 <?php
 
-require_once "./classes/Fruit.php";
+require_once "./autoload.php";
 
-// $apple = new Fruit("apple","red");
-
-// echo $apple->details();
-
-// $pineapple = new Fruit("pineapple","yellow");
-// echo $pineapple->details();
-
-print_r(Fruit::z());
+$kyawkyaw = new Student("Kyaw Kyaw","male","2002");
+print_r($kyawkyaw->introduction());
