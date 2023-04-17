@@ -2,23 +2,15 @@
 
 require_once "./autoload.php";
 
-// $kyawkyaw = new Student("Kyaw Kyaw","male","2002");
-// print_r($kyawkyaw->introduction());
+// var_dump(Three::d());
 
-// $my = new Db("my");
-// print_r($my->create(["name"=>"KK", "money"=>1500]));
+// $one = new One;
+// print_r($one->a()->b()->c()->d());
 
-// print_r($my->show(3));
+$user = new QueryBuilder("users");
+// print_r($user->where("gender","=","male")->where("age",">","18")->sql());
+echo $user->where("gender","=","male")->where("age",">","18")->orderBy("id")->orderBy("name","DESC")->sql();
 
-$textFile = new FileWriter("test.txt");
-$textFile->write("a \n");
-$textFile->write("b \n");
-$textFile->write("c \n");
-$textFile->write("d \n");
-$textFile->write("e \n");
 
-$textHtml = new FileWriter("home.html");
-$textHtml->write("<h1>Min Ga Lar Par</h1>");
-
-$textCss = new FileWriter("style.css");
-$textCss->write("body{color:red}");
+$lists = new QueryBuilder("users");
+echo $lists->where("id","=",4)->orWhere("id", "=", 5)->orWhere("id", "=", 9)->sql();
