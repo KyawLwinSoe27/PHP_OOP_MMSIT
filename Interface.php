@@ -13,6 +13,3 @@ interface C {
     public function c();
 }
 
-class D implements A,B,C {
-    
-}
